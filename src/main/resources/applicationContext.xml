@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:int-twitter="http://www.springframework.org/schema/integration/twitter"
+       xmlns:int-feed="http://www.springframework.org/schema/integration/feed"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/integration/twitter http://www.springframework.org/schema/integration/twitter/spring-integration-twitter.xsd
+       http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+       http://www.springframework.org/schema/integration/feed http://www.springframework.org/schema/integration/feed/spring-integration-feed.xsd">
+
+       <context:property-placeholder location="classpath:twitter.properties"/>
+
+       <int-feed:inbound-channel-adapter id="rssLotery"
+                                         url="http://www.loteriasyapuestas.es/es/euromillones/resultados/.formatoRSS"
+                                         channel="rssChannel">
+                     <int:poller fixed-rate="10000" max-messages-per-poll="1" />
+       </int-feed:inbound-channel-adapter>
+
+       <int:channel id="rssChannel"/>
+
+
+       <int:service-activator auto-startup="true"
+                              input-channel="rssChannel"
+                              output-channel="twitterChannel"
+                              ref="rss2twitter"/>
+
+       <int-twitter:outbound-channel-adapter
+               twitter-template="twitterTemplate"
+               auto-startup="false"
+               channel="twitterChannel"/>
+
+       <int:channel id="twitterChannel"/>
+
+
+
+       <bean id="twitterTemplate" class="org.springframework.social.twitter.api.impl.TwitterTemplate">
+              <constructor-arg value="${twitter.oauth.consumerKey}"/>
+              <constructor-arg value="${twitter.oauth.consumerSecret}"/>
+              <constructor-arg value="${twitter.oauth.accessToken}"/>
+              <constructor-arg value="${twitter.oauth.accessTokenSecret}"/>
+       </bean>
+
+       <bean id="rss2twitter" class="com.ventura24.poc.springintegration.bean.Rss2Twitter"/>
+
+</beans>
