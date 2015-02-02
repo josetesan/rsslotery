@@ -3,8 +3,9 @@
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
+        <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/ventura24/poc/springintegration/Main.java</file>
         </fileset>
       </configuration>
     </facet>
@@ -43,7 +44,6 @@
     <orderEntry type="library" exported="" name="Gradle: org.springframework.integration:spring-integration-stream:4.1.1.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-actuator:1.2.1.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.social:spring-social-twitter:1.1.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.rometools:rome-fetcher:1.5.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot:1.2.1.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:1.2.1.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-starter-logging:1.2.1.RELEASE" level="project" />
@@ -61,7 +61,6 @@
     <orderEntry type="library" exported="" name="Gradle: org.springframework.security:spring-security-crypto:3.2.3.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.social:spring-social-config:1.1.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.social:spring-social-core:1.1.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.rometools:rome:1.5.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-httpclient:commons-httpclient:3.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.8" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.slf4j:jul-to-slf4j:1.7.8" level="project" />
@@ -71,7 +70,6 @@
     <orderEntry type="library" exported="" name="Gradle: com.lmax:disruptor:3.2.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: io.gatling:jsr166e:1.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.social:spring-social-web:1.1.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.rometools:rome-utils:1.5.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.jdom:jdom:2.0.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: ch.qos.logback:logback-core:1.1.2" level="project" />
@@ -82,5 +80,8 @@
     <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.4.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.4.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.rometools:rome-fetcher:1.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.rometools:rome:1.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.rometools:rome-utils:1.5.0" level="project" />
   </component>
 </module>
