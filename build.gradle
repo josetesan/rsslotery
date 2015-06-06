@@ -3,12 +3,13 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.1.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'spring-boot'
+apply plugin: 'idea'
 
 sourceCompatibility = 1.8
 version = '1.0'

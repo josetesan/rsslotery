@@ -14,7 +14,8 @@
        <context:property-placeholder location="classpath:twitter.properties"/>
 
        <int-feed:inbound-channel-adapter id="rssLotery"
-                                         url="https://www.ventura24.es/blog/feed"
+                                         feed-fetcher="feedFetcher"
+                                         url="http://www.loteriasyapuestas.es/es/la%2Dprimitiva/resultados/.formatoRSS"
                                          channel="rssChannel">
                      <int:poller fixed-rate="60000" max-messages-per-poll="1" />
        </int-feed:inbound-channel-adapter>
@@ -40,6 +41,7 @@
        <int:channel id="twitterChannel"/>
 
 
+       <bean id="feedFetcher" class="com.ventura24.poc.springintegration.bean.FeedFetcherImpl"/>
 
        <bean id="twitterTemplate" class="org.springframework.social.twitter.api.impl.TwitterTemplate">
               <constructor-arg value="${twitter.oauth.consumerKey}"/>
