@@ -26,11 +26,13 @@
         <int:transformer auto-startup="true"
                          id="rss2twitterTransformer"
                          input-channel="rssChannel"
-                         output-channel="twitterChannel"
+                         output-channel="loggingChannel"
                          ref="rss2twitter"/>
 
 
 
+        <int:channel id="loggingChannel"/>
+        <int:logging-channel-adapter id="logging" level="INFO" log-full-message="true" channel="loggingChannel" />
 
        <int-twitter:outbound-channel-adapter
                id="outboundChannel"
