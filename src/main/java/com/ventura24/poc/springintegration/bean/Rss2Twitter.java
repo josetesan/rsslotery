@@ -18,12 +18,15 @@ public class Rss2Twitter {
 
     @Transformer
     public Message convertRss2Tweet(Message<SyndEntry> message){
+/*
         LOGGER.info("Titulo {}, Fecha {}, Contenido {}",
+
                 message.getPayload().getTitle()        ,
                 message.getPayload().getPublishedDate(),
                 message.getPayload().getDescription().getValue()
         );
 
+        */
 
         return new GenericMessage(message.getPayload().getTitle());
     }
